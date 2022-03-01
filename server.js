@@ -18,6 +18,7 @@ app.get('/*', function(req, res) {
 });
 
 // API routes, must before "catch all" route
+app.use('/api/users', require('./routes/api/users'));
 
 
 // "Catch all" route
