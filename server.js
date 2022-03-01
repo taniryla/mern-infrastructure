@@ -13,13 +13,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 // API routes, must before "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // "Catch all" route
 const port = process.env.PORT || 3001;
